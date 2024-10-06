@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- styles -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script type="module" src="./modelo/database/remote/index_form_auth.js"></script>
+    <script type="module" src="./modelo/database/remote/index__form_login.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main class="mainIndex">
+        
+        <h2>App Facturas v2.0</h2>
+
+        <form id="idFormAuthLogin">
+            <h2>Formulario Login</h2>
+            <input type="text" name="email">
+            <input type="password" name="password">
+            <input type="submit" value="Entrar">
+        </form>
+
+        <form id="idFormAuthRegistro" >
+            <h2>Formulario Registro</h2>
+            <input type="text" name="email">
+            <input type="password" name="password">
+            <input type="submit" value="Entrar">
+        </form>
+
+        <ul>
+            <li class="logged-out"><h3>Desconectado</h3></li>
+            <li class="logged-in"><h3>Conectado</h3></li>
+        </ul>
+    </main>
+
+    <!-- toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+</body>
+</html>

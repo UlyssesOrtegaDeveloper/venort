@@ -1,0 +1,212 @@
+#idFormCrearFactura {
+
+    padding: 1em;
+
+    select, input {
+        margin-top: 0.5em;
+    }
+
+    select {
+        width: 100%;
+        padding: 0.5em;
+        border: 0;
+    }
+
+    ul#idContainerDatosFactura {
+
+        input, label {
+            margin-top: 0;
+            padding: 0.1em;
+            border: 0;
+            background-color: transparent;
+        }
+        
+        margin-top: 1em;
+        margin-bottom: 1em;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1em;
+    }
+
+    ul#idContainerPreciosImpuestosReceptor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+
+        li {
+            
+            select {
+                display: none;
+            }
+        }
+    }
+
+    div#idContainerListasPreciosImpuestos {
+        display: none;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+        margin: 0.5em;
+        
+        ul {
+            padding: 0.5em;
+            border: 1px dashed;
+        }
+    }
+
+    div#idContainerSubmitFactura {
+        display: none;
+        text-align: center;
+        
+        input {
+            cursor: pointer;
+            width: 90%;
+            padding: 0.7em;
+        }
+    }
+}
+
+form#idFormAddServicio, form#idFormEditServicio {
+
+    padding: 1em;
+
+    ul {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1em;
+
+        li {
+
+            div#idContainerInputsExtras {
+                display: grid;
+                grid-template-columns: 50px 100px 150px;
+                gap: 0.3em;
+                margin-top: 0.5em;
+
+                select {
+                    padding: 0.1em;
+                }
+            }
+            
+            div#idContainerInputsEspeciales {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 0.3em;
+                margin-top: 0.5em;
+
+                select {
+                    padding: 0.1em;
+                }
+            }
+        }
+    }
+
+    
+
+    ul#idContainerInputsEspecialesIconoEliminar,
+    ul#idContainerInputsEspecialesIconoAgregar,
+    ul#idContainerInputsExtrasIconoEliminar,
+    ul#idContainerInputsExtrasConceptoIconoEliminar {
+        //display: none;
+        grid-template-columns: 1fr;
+
+        border: 1px dashed black;
+        margin: 0.5em;
+        padding: 0.5em;
+
+        div {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5em;
+
+            li:nth-child(2) {
+                
+                input {
+                    width: 90%;
+                }
+            }
+        }
+    }
+
+    div#idContainerSubmitServicio {
+        text-align: center;
+        padding-top: 1.5em;
+
+        input {
+            cursor: pointer;
+            width: 90%;
+            padding: 0.7em;
+        }
+    }
+}
+
+#idFormEditFactura {
+    
+    padding: 1em;
+
+    ul {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1em;
+
+        /* li {
+
+            div#idContainerInputsExtras {
+                display: grid;
+                grid-template-columns: 50px 100px 150px;
+                gap: 0.3em;
+                margin-top: 0.5em;
+
+                select {
+                    padding: 0.1em;
+                }
+            }
+            
+            div#idContainerInputsEspeciales {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 0.3em;
+                margin-top: 0.5em;
+
+                select {
+                    padding: 0.1em;
+                }
+            }
+        } */
+    }
+
+    div#idContainerSubmitFactura {
+        text-align: center;
+        padding-top: 1.5em;
+
+        input {
+            cursor: pointer;
+            width: 90%;
+            padding: 0.7em;
+        }
+    }
+}
+
+form#idFormFechaEnvioEmailFactura, form#idFormFechaFacturaCobrada {
+    padding: 1em;
+
+    ul, h3 {
+        padding: 1em;
+        text-align: center;
+
+        input {
+            font-size: 22px;
+            padding: 0.2em;
+        }
+    }
+
+    div#idContainerSubmitServicio {
+        text-align: center;
+        padding-top: 1.5em;
+
+        input {
+            cursor: pointer;
+            width: 90%;
+            padding: 0.7em;
+        }
+    }
+}
