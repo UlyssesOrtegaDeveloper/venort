@@ -1,0 +1,406 @@
+$color_fondo_even: rgb(49, 159, 53);
+
+#facturaPDF {
+
+    //border: 1px dashed grey;
+    .titulo-facturaPDF {
+        text-align: end;
+        text-transform: uppercase;
+        margin: 0;
+        color: #aaaaaa;
+    }
+
+    table.datos-factura {
+        width: 100%;
+    
+        td {
+            text-align: end;
+            &:nth-child(2) {
+                text-align: end;
+            }
+        }
+    }
+    
+    table.calculo-factura {
+        width: 100% !important;
+    
+        tr {
+            &:nth-child(odd) {
+                background-color: $color_fondo_even;
+            }
+    
+            &:nth-child(even){
+                background-color: $color_fondo_even;
+            }
+        }
+    
+        tr.noColor {
+            background-color: lightcoral !important;
+            
+            td {
+                background-color: lightgreen !important;
+            }
+        }
+    
+        td {
+            border: 3px solid white;
+            padding: 1em;
+    
+            &:nth-child(2) {
+                text-align: center;
+            }
+    
+            &:nth-child(3) {
+                text-align: end;
+            }
+        }
+    }
+    
+    table#idContenedorFechasFactura {
+    
+        tr {
+    
+            td {
+                width: 20%;
+    
+                input {
+                    width: 118px !important;
+                }
+    
+                &:nth-child(2) {
+                    width: 30%;
+                    font-size: 12px;
+                }
+    
+                &:nth-child(3) {
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+
+
+.factura__logo {
+    margin-bottom: -2em;
+    padding: 1em;
+    margin-top: -2em;
+}
+
+
+/// ---------------------------------------------------------
+///         F A C T U R A  -  I M P U E S T O S
+/// ---------------------------------------------------------
+
+/// OK NEW
+.candado_off {
+    display: none !important;
+}
+
+/// OK NEW
+.factura__base_impuestos_total {
+
+    margin-top: 1em;
+
+    ul {
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: end;
+        text-align: end;
+        
+        li {
+            width: 160px;
+            padding: 0.2em;
+        }
+
+        .total_factura {
+            margin-top: 0.8em;
+            font-weight: 600;
+            font-size: 18px;
+        }
+    }
+}
+
+
+
+
+.factura__contenedorTop {
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    li {
+        span:nth-child(1) {
+            margin-right: 0.3em;
+        }
+    }
+
+    ul.factura__infoFechas {
+
+        li {
+            display: grid;
+            grid-template-columns: 1fr auto;
+
+            text-align: start;
+        }
+    }
+
+    ul.factura__infoEmisor {
+        
+        li {
+            display: grid;
+            grid-template-columns: auto 1fr;
+
+            text-align: start;
+
+
+            span { /// desbordamiento ....
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+
+    ul.factura__infoReceptor {
+        li {
+            display: grid;
+            grid-template-columns: auto 1fr;
+
+            text-align: start;
+
+            
+            span { /// desbordamiento ....
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+
+.factura_hr_data_top {
+    margin-bottom: 1em;
+    color: #aaaaaa;
+}
+
+.factura_hr_data_bottom {
+    margin-top: 1em;
+    color: #aaaaaa;
+}
+
+
+.factura__concepto {
+    //padding: 1em; //! -> cambiar a -> padding: 1em;
+    font-weight: bold;
+}
+
+.factura__impuestos {
+    text-align: end;
+}
+
+.factura__IBAN {
+    text-align: start;
+    //padding-right: 3em;
+}
+
+.factura__conceptoImpuesto {
+    text-align: center;
+}
+
+.factura__conceptoPorcentaje {
+    text-align: start;
+}
+
+.factura__contendor_impuestos {
+    text-align: end;
+
+    li {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+
+        div {
+            grid-template-columns: 1fr auto;
+
+            &:nth-child(1) {
+
+                display: grid;
+                grid-template-columns: 1fr 0.2fr;
+                
+                text-align: end;
+                //background-color: #c7c7c7;
+                margin-right: 0em;
+    
+                span:nth-child(1) {
+                    text-align: end;
+                }
+
+                span:nth-child(2) {
+                    display: inline-block;
+                    width: 40px;
+                    text-align: end;
+                }
+            }
+        }
+
+    }
+}
+
+.factura__total {
+    padding-top: 1.2em; //! cambiar a -> padding-top: 2em;
+
+    li {
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+
+        div {
+            grid-template-columns: 1fr auto;
+
+            &:nth-child(1) {
+
+                display: grid;
+                grid-template-columns: 1fr 0.2fr;
+                
+                text-align: end;
+                //background-color: #c7c7c7;
+                margin-right: 0em;
+    
+                span:nth-child(1) {
+                    text-align: end;
+                }
+
+                span:nth-child(2) {
+                    display: inline-block;
+                    width: 40px;
+                    text-align: end;
+                }
+            }
+
+            &:nth-child(2) {
+                text-align: end;
+                font-weight: 900;
+            }
+        }
+
+    }
+}
+
+
+.factura__alignRight {
+    text-align: end;
+}
+
+.factura__alignLeft {
+    text-align: start;
+    margin-left: 1em;
+}
+
+/* .factura__tituloServicios {
+    
+    ul {
+
+        li {
+            //background-color: #a6a6a6;
+            
+        }
+    }
+} */
+
+.factura__fondo_servicios {
+
+    ul:nth-child(odd) {
+        //background-color: #e7e7e7;
+        background-color: #f2f2f2;
+        border: 0;
+        padding: 0.1em;
+    }
+
+    ul:nth-child(even) {
+        //background-color: #ffffff;
+        background-color: #f2f2f2;
+        border: 0;
+        padding: 0.1em;
+    }
+}
+
+.factura__observaciones {
+
+    h4 {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        //grid-template-columns: repeat( auto-fit, minmax(50px, 1fr));
+        text-align: center;
+    }
+    
+    li {
+        font-size: small;
+        padding: 0.2em;
+        text-align: left;
+    }
+
+    #idContenedorEspeciales {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.factura__grid_contenedor_servicios_operaciones {
+    
+    ul {
+        display: grid;
+        grid-template-columns: auto 1fr 1fr auto;
+
+        li:nth-child(1) {
+            width: 40px;
+            text-align: end;
+        }
+
+        li:nth-child(2) {
+            width: 100px;
+            text-align: start;
+            margin-left: 14px;
+        }
+
+        li:nth-child(3) {
+            width: 100px;
+            text-align: end;
+            margin-left: 14px;
+        }
+
+        li:nth-child(4) {
+            width: 100px;
+            text-align: end;
+            margin-left: 14px;
+        }
+    }
+
+    /* ul#idFacturaZonaServicios {
+
+        li {
+            text-align: end;
+        }
+    }
+
+    ul#idFacturaZonaServiciosConceptos {
+
+        li {
+            text-align: start;
+        }
+    } */
+}
+
+/// SERVICIOS - SECTION 1 - MODAL BOTTOM
+/// 
+
+.servicios__total_sumado {
+    font-weight: 300;
+    font-size: x-large;
+}
+
+

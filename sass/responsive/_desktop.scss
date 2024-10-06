@@ -1,0 +1,29 @@
+@media screen and (width >= $width__desktop) {
+    
+    nav#idContainer__navBarTop {
+        
+        ul {
+            margin: 0 auto;
+            width: $width__desktop;
+        }
+    }
+
+    nav#idContainer__navBarBottom {
+        display: none !important;
+    }
+
+    main#idContainer__selects,
+    main#idContainer__contenido  {
+        margin: 0 auto;
+        width: $width__desktop;
+    }
+
+    .navbar__top_mobile {
+        display: none !important;
+    }
+
+    .navbar__top_desktop {
+        display: grid !important;
+    }
+}
+

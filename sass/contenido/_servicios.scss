@@ -1,0 +1,45 @@
+.servicios {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+    align-items: center;
+    
+    margin: 0.5em;
+    border: 1px solid black;
+
+    li {
+        list-style: none; /// quita puntos
+        padding: 0.3em;
+    }
+
+    &:last-child {
+        padding: 0.3em;
+    }
+}
+
+#idSectionServicios {
+    display: none;
+}
+
+#idSectionFactura {
+    display: none;
+}
+
+.titulo_servicios_factura {
+    
+    h4 {
+        padding: 1em;
+    }
+}
+
+.estilo_agregar_servicio {
+    background-color: green;
+    color: white;
+}
+
+/// CUANDO NO HAY SERVICIOS SE OCULTAN LOS BOTONES
+/// EDIT, DELETE Y BLOQUEAR
+
+.sin_servicios {
+    display: none !important;
+}

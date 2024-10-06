@@ -1,0 +1,87 @@
+
+
+
+ul.card_titulo {
+    border: none;
+    //font-weight: bold;
+    text-transform: capitalize;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    justify-items: center;
+    align-items: center;
+
+    padding-top: 1em;
+    margin: 0.5em;
+
+    li {
+        width: 100%;
+        text-align: center;
+        /// desbordamiento ....
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    li:last-child {
+        display: none;
+        text-align: center;
+    }
+}
+
+.card {
+    
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(50px, 1fr) );
+    align-items: center;
+    justify-items: center;
+
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+    //padding-right: 1em;
+    margin: 0.5em;
+    line-height: 24px;
+    
+    /// magic
+    /* transition: all 1s;
+    transform: scale(1); */
+
+    li:last-child {
+        display: none;
+    }
+}
+
+.card_factura {
+    
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(50px, 1fr) );
+    align-items: center;
+    justify-items: center;
+
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+    //padding-right: 1em;
+    margin: 0.5em;
+    line-height: 24px;
+}
+
+
+/// 1º Card -> se ilumina al agregar
+
+
+
+.card_receptores {
+    justify-items: initial;
+
+    li:nth-child(2) {
+        text-align: end;
+    }
+}
+
+.card_expandido {
+    padding: 1em;
+}
