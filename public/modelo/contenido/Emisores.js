@@ -16,7 +16,6 @@ const ENCODING = (str) => {
     }));
 }
 
-console.log('cod', ENCODING('logo.png'));
 
 //! ATENCION, esta clase sirve para cuando se crea la factura
 //! y para informar del estado de estos datos
