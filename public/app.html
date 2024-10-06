@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <!-- pdf -->
+    <script src="./modelo/pdf/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <script type="module" src="../public/modelo/main/modules.js"></script>
+    
+    <!-- ahora mismo modules.js hace de LOAD -->
+    <!-- <script type="module" src="./controlador/evento_LOAD.js"></script> -->
+    
+    <title>App MVC 2.0</title>
+</head>
+<body>
+
+    <!-- OK - a falta de decidir si se llama por clase o id -->
+    <nav id="idContainer__navBarTop">
+        <ul id="navbar__top_mobile" class="navbar__top_mobile"><!-- contenido --></ul>
+        <ul id="navbar__top_desktop" class="navbar__top_desktop"><!-- contenido --></ul>
+    </nav>
+    
+    <!-- OK -->
+    <section id="idContainer__selects"><!-- contenido --> </p></section>
+
+
+
+    <!-- ...IN WORKING -->
+    <main id="idContainer__contenido"></main>
+    
+    <!-- Fondo Menu Circular -->
+    <div id="idFondoNavMenuCircular"></div>
+    
+    <nav class="menuCircular">
+        <ul id="idContainer__menuCircular"></ul>
+        <ul><li id="idMenuCircular" data-evento="click" data-clase="menuCircular" data-metodo="toggle_abrir_cerrar"><span></span><span class="material-symbols-outlined menuCircular__cerrado">add</span></li></ul>
+    </nav>
+    
+    
+    <!-- OK -->
+    <nav id="idContainer__navBarBottom"><!-- contenido --></nav>
+
+    <!-- DIALOGS -->
+    <dialog id="idContainer__modal_left" data-dialog="left">
+        <ul class="cerrarModal">
+            <li></li>
+            <li><span id="idTituloModal_left"><!-- Titulo Modal --></span></li>
+            <li><span data-evento="click" data-clase="dialog" data-metodo="cerrar_modal" data-propiedad="left" class="material-symbols-outlined">close</span></li>
+        </ul>
+        
+        <ul class="container__avatar_modal_left">
+            <li>
+                <img id="idPhotoURL" src="" alt="">
+                <h2 id="idDisplayName"><!-- database --></h2>
+            </li>
+        </ul>
+
+        <h4>Mis Datos</h4><hr>
+        <article id="idContainerModalLeft"><!-- contenido --></article>
+        
+        <h4>Mis Clientes</h4><hr>
+        <article id="idContainerModalLeft2"><!-- contenido --></article>
+
+        <!-- Fondo Menu Ciircular -->
+        <div id="idFondoNavMenuCircular_left"></div>
+
+        <nav class="menuCircular">
+            <ul id="idContainer__menuCircular_modal_left">
+                <li data-evento="click"><span data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="delete">Borrar Left</span><span data-evento="click" class="material-symbols-outlined">delete_forever</span></li>
+                <li data-evento="click"><span data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="edit">Editar Left</span><span data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="" class="material-symbols-outlined">edit</span></li>
+                <li data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto"><span data-evento="click">Agregar Left</span><span data-evento="click" class="material-symbols-outlined">add</span></li>
+            </ul>
+            <ul><li id="idMenuCircular_modal_left" data-evento="click" data-clase="menuCircular" data-metodo="toggle_abrir_cerrar_modal_left"><span></span><span class="material-symbols-outlined menuCircular__cerrado">add</span></li></ul>
+        </nav>
+        <section id="idVacio"><!-- vacio --></section>
+
+        <ul class="container__btn_cerrar-sesion logged-in">
+            <li>
+                <button id="idLogout">Cerrar Session</button>
+            </li>
+        </ul>
+    </dialog>
+    
+    <dialog id="idContainer__modal_full" data-dialog="full">
+        <ul class="cerrarModal">
+            <li></li>
+            <li><span id="idTituloModal_full"><!-- Titulo Modal --></span></li>
+            <li><span data-evento="click" data-clase="dialog" data-metodo="cerrar_modal" data-propiedad="full" class="material-symbols-outlined">close</span></li>
+        </ul>
+
+        <!-- Fondo Menu Ciircular -->
+        <div id="idFondoNavMenuCircular_full"></div>
+        
+        <nav class="menuCircular">
+            <ul id="idContainer__menuCircular_modal_full">
+                
+                <div id="idContainer__btn_factura_bloqueada" class="candado_off">
+                    <li id="idBtnCircularBloquearFactura" data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="desbloquear" data-p1="candado" data-p2="desbloquear"><span data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="desbloquear" data-p1="candado" data-p2="desbloquear">DesBloquear</span><span data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="desbloquear" data-p1="candado" data-p2="desbloquear" class="material-symbols-outlined">lock</span></li>
+                    <li id="idBtnCircularPendienteCobrar" data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="candado" data-p2="fecha_factura_cobrada"><span data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="candado" data-p2="fecha_factura_cobrada">Factura cobrada</span><span data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="candado" data-p2="fecha_factura_cobrada" class="material-symbols-outlined">check</span></li>
+                    <li id="idBtnCircularPendienteEnviarFactura" data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="candado" data-p2="fecha_envio_email_factura"><span data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="email" data-p1="candado" data-p2="email">Factura enviada</span><span data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="email" data-p1="candado" data-p2="email" class="material-symbols-outlined">mail</span></li>
+                    <li class="imprimir_factura"><span class="imprimir_factura">PDF</span><span class="material-symbols-outlined imprimir_factura">picture_as_pdf</span></li>
+                </div>
+
+                <div id="idContainer__btn_factura_desbloqueada">
+                    <!-- botones add, edit, delete -->
+                    <li data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="bloquear" data-p1="candado" data-p2="bloquear"><span data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="bloquear" data-p1="candado" data-p2="bloquear">Bloquear</span><span data-evento="click" data-clase="dialog" data-metodo="candados" data-propiedad="bloquear" data-p1="candado" data-p2="bloquear" class="material-symbols-outlined">lock</span></li>
+                    <li data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="delete"><span data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="delete">Borrar Servicio</span><span data-evento="click" class="material-symbols-outlined">delete_forever</span></li>
+                    <li data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="edit"><span data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="edit">Editar Servicio</span><span data-evento="click" data-clase="crud" data-metodo="mostrar_iconos" data-propiedad="" class="material-symbols-outlined">edit</span></li>
+                    <li data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="agregar_servicio"><span data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="agregar_servicio">Agregar Servicio</span><span data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1="agregar_servicio" class="material-symbols-outlined">add</span></li>
+                </div>
+                
+            </ul>
+            <ul><li id="idMenuCircular_modal_full" data-evento="click" data-clase="menuCircular" data-metodo="toggle_abrir_cerrar_menu_circular_modal_full"><span></span><span class="material-symbols-outlined menuCircular__cerrado">add</span></li></ul>
+        </nav>
+        
+        <section id="idContainer__contenido_modal_full"></section>
+    </dialog>
+    
+    <dialog id="idContainer__modal_auto" data-dialog="auto">
+        <ul class="cerrarModal">
+            <li></li>
+            <li><span id="idTituloModal_auto"><!-- Titulo Modal --></span></li>
+            <li><span data-evento="click" data-clase="dialog" data-metodo="cerrar_modal" data-propiedad="auto" class="material-symbols-outlined">close</span></li>
+        </ul>
+        
+        <section id="idContainer__contenido_modal_auto"></section>
+    </dialog>
+    
+    <!-- toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>     
+
+        // hacer 'click' en boton + para agregar especiales
+        const contenedorInputsEspeciales = document.querySelector('#idContainer__modal_auto')
+    
+        contenedorInputsEspeciales.addEventListener('click', e => {
+
+            /// ----- EXTRAS -----
+            /// eliminar input extra existente
+            if (e.target.classList[1] === 'icon_borrar_extra') {
+
+                const text = `¿Deseas borrar el "Extra_${e.target.id}"?`
+
+                if (confirm(text) == true) {
+                    
+                    const input_extra_eliminar = document.querySelector(`#idContainerBloqueExtra_${e.target.id}`)
+                    /// apunto al contenedor de extras antiguos
+                    //const numero_de_extras_nuevos = document.getElementById('idContainerInputsExtrasIconoAgregar')
+                    
+                    /// y elimino a todos los hijos para que no haya complicaciones
+                    //numero_de_extras_nuevos.innerHTML = ''
+                    
+                    /// elimino el especial antiguo elegido
+                    input_extra_eliminar.remove()
+                }
+            }
+
+
+
+            const fn_DOM_agregar_input_extras = (suma) => {
+                let container_add_extras = document.getElementById('idContainerInputsExtrasIconoAgregar')
+                let div_extra = document.createElement(`div`);
+
+                div_extra.setAttribute("id", `idContainerNuevoBloqueExtra_${suma}`);
+                div_extra.innerHTML = `<li><label for='extra_${suma}'>Extra_${suma}</label></li><li><input type="text" name="extra_${suma}" value=""></li><li><label for='extras_concepto_${suma}'>Extra_concepto_${suma}</label></li><li><input type="text" name="extras_concepto_${suma}" value=""><span id='${suma}' class="material-symbols-outlined icon_borrar_extras_nuevo">delete</span></li>`;
+                container_add_extras.append(div_extra); // inserta liLast al final de <ol>
+            }
+
+            /// agregar nuevo input extra
+            if (e.target.classList[1] == 'icon_agregar_extra') {
+                
+                const numero_de_extras = document.getElementById('idContainerInputsExtrasIconoEliminar').children.length
+                const numero_de_extras_nuevos = document.getElementById('idContainerInputsExtrasIconoAgregar').children.length
+                const suma = numero_de_extras + numero_de_extras_nuevos
+                return fn_DOM_agregar_input_extras(suma)
+            }
+
+            /// eliminar nuevo input extra
+            if (e.target.classList[1] === 'icon_borrar_extras_nuevo') {
+
+                const text = `¿Deseas borrar el "Extra_${e.target.id}"?`
+
+                if (confirm(text) == true) {
+
+                    const numero_de_extras = document.getElementById('idContainerInputsExtrasIconoEliminar').children.length
+                    const numero_de_extras_nuevos = document.getElementById('idContainerInputsExtrasIconoAgregar').children.length
+                    const suma = numero_de_extras + numero_de_extras_nuevos
+                    
+                    let ultimo_agregado = suma - 1
+
+                    console.log('ultimo', ultimo_agregado);
+
+                    const input_extra_a_eliminar = document.querySelector(`#idContainerNuevoBloqueExtra_${ultimo_agregado}`)
+                    return input_extra_a_eliminar.remove()
+                }
+            }
+
+
+
+
+            /// -------------- ESPECIALES ----------------
+
+            /// eliminar input especial existente
+            if (e.target.classList[1] == 'icon_borrar_especial') {
+
+                const text = `¿Deseas borrar el "Especial_${e.target.id}"?`
+
+                if (confirm(text) == true) {
+                    const input_especial_a_eliminar = document.querySelector(`#idContainerBloqueEspecial_${e.target.id}`)
+                    /// apunto al contenedor de nuevos especiales
+                    const numero_de_especiales_nuevos = document.getElementById('idContainerInputsEspecialesIconoAgregar')
+                    /// y elimino a todos los hijos para que no haya complicaciones
+                    numero_de_especiales_nuevos.innerHTML = ''
+                    /// elimino el especial antiguo elegido
+                    return input_especial_a_eliminar.remove()
+                }
+            }
+            
+            
+            const fn_DOM_agregar_input_especiales = (suma) => {
+                let container_add_especiales = document.getElementById('idContainerInputsEspecialesIconoAgregar')
+                let div = document.createElement(`div`);
+
+                div.setAttribute("id", `idContainerNuevoBloqueEspecial_${suma}`);
+                div.innerHTML = `<li><label for='especial_${suma}'>Especial_${suma}</label></li><li><input type="text" name="especial_${suma}" value=""><span id='${suma}' class="material-symbols-outlined icon_borrar_especial_nuevo">delete</span></li>`;
+                container_add_especiales.append(div); // inserta liLast al final de <ol>
+                
+            }
+
+            /// agregar nuevo input especial
+            if (e.target.classList[1] == 'icon_agregar_especial') {
+                
+                const numero_de_especiales = document.getElementById('idContainerInputsEspecialesIconoEliminar').children.length
+                const numero_de_especiales_nuevos = document.getElementById('idContainerInputsEspecialesIconoAgregar').children.length
+                const suma = numero_de_especiales + numero_de_especiales_nuevos
+                return fn_DOM_agregar_input_especiales(suma)
+            }
+
+            /// eliminar nuevo input especial
+            if (e.target.classList[1] == 'icon_borrar_especial_nuevo') {
+
+                const text = `¿Deseas borrar el "Especial_${e.target.id}"?`
+                
+                if (confirm(text) == true) {
+
+                    const numero_de_especiales = document.getElementById('idContainerInputsEspecialesIconoEliminar').children.length
+                    const numero_de_especiales_nuevos = document.getElementById('idContainerInputsEspecialesIconoAgregar').children.length
+                    const suma = numero_de_especiales + numero_de_especiales_nuevos
+                    
+                    let ultimo_agregado = suma - 1
+
+                    const input_especial_a_eliminar = document.querySelector(`#idContainerNuevoBloqueEspecial_${ultimo_agregado}`)
+                    return input_especial_a_eliminar.remove()
+                }
+            }
+        }) 
+        
+
+    </script>
+    
+    <!-- <script type="module" src="./controlador/evento_CLICK.js"></script>
+    <script type="module" src="./controlador/evento_CHANGE.js"></script>
+    <script type="module" src="./controlador/evento_SUBMIT.js"></script>
+
+    <script type="module" src="./modelo/html/Dialog.js"></script>
+    <script type="module" src="./modelo/html/NavBars.js"></script> -->
+</body>
+</html>
