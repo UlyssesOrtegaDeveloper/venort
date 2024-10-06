@@ -1,0 +1,45 @@
+
+/// RESPONSIVE
+$width__desktop: 1400px;
+$width__tablet: 675px;
+$width__mobile: 375px;
+
+
+
+/* PALETAS DE COLORES */ 
+$paleta_colores_primario_fondo: rgb(75, 148, 125);///rgb(33, 122, 200); /// background-color: rgb(33, 122, 200); rgb(41, 106, 166)
+$paleta_colores_primario_texto: white;
+
+$paleta_colores_primario_modal_fondo: rgba(226, 229, 234, 0.98);
+$paleta_colores_primario_modal_texto: black;
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+/* NAVS */
+$color_navegacion_fondo: $paleta_colores_primario_fondo;
+$color_navegacion_texto: $paleta_colores_primario_texto;
+
+
+/* MODALS */
+$color_modal_transparencia_fondo: rgba(0, 0, 0, 0.800);
+
+$color_cerrar_modal_fondo: $paleta_colores_primario_fondo;
+$color_cerrar_modal_texto: $paleta_colores_primario_texto;
+
+$color_modal_fondo: $paleta_colores_primario_modal_fondo;
+$color_modal_texto: $paleta_colores_primario_modal_texto;
+
+/*      z-index de menu circular      */
+$z_Index_menu_circular_section: 1; /// modal left
+$z_Index_menu_circular_modal_auto: 3; /// modal left
+$z_Index_menu_circular_modal_full: 5; /// modal left
+
+/*      z-index de los modales      */
+$z_Index_fondo_full: 1;
+$z_Index_modal_full: 2;
+$z_Index_fondo_left: 1;
+$z_Index_modal_left: 2;
+$z_Index_fondo_auto: 3;
+$z_Index_modal_auto: 4;

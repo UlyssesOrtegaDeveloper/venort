@@ -1,0 +1,87 @@
+.menuCircular {
+    z-index: $z_Index_menu_circular_section;
+    
+    position: fixed;
+    width: 200px;
+    bottom: 4em;
+    right: 0;
+
+    ul {
+
+        li {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            
+            margin: 1em; /// separacion entre circulos
+    
+            cursor: pointer;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            span {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                //color: whitesmoke !important;
+
+                &:nth-child(odd) {
+                    color: $paleta_colores_primario_texto;
+                    width: 130px;
+                    font-size: 18px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                
+                &:nth-child(even) {
+                    background-color: transparent;
+                    //background-color: $paleta_colores_primario_fondo;
+                    color: $paleta_colores_primario_texto;
+                    
+                    border: 1px dashed aliceblue;
+                    border-radius: 50%;
+                    width: 50px;
+                    height: 50px;
+
+                    &:hover {
+                        border: 2px solid aliceblue;
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.menuCircular__cerrado {
+    color: $paleta_colores_primario_fondo !important;
+    background-color: transparent !important;
+    border: 1px solid $paleta_colores_primario_fondo !important;
+}
+
+.menuCircular__desplegado {
+    color: white !important;;
+    background-color: transparent !important;
+    border: 1px solid white !important;
+}
+
+
+#idContainer__menuCircular, #idContainer__menuCircular_modal_full, #idContainer__menuCircular_modal_left {
+    display: none;
+}
+
+
+div#idFondoNavMenuCircular, div#idFondoNavMenuCircular_full, div#idFondoNavMenuCircular_left {
+    display: none;
+    background-color: hsla(0, 0%, 0%, 0.650);
+    z-index: $z_Index_menu_circular_section;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: 0;
+    top: 0;
+}

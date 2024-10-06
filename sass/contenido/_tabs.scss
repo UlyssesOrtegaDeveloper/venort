@@ -1,0 +1,161 @@
+
+
+:root {
+    --color: rgb(215, 215, 215);
+    --colorFondo: #ffffff;
+    --colorBlanco: #fff;
+    --colorPestaña: #aaa;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--colorFondo);
+}
+
+.mainTab {
+    height: 80vh;
+    //height: auto;
+    
+    /* width: 90%; */
+
+    margin: 5rem auto;
+    background-color: white;
+    /* box-shadow: 0 5px 5px #333; */
+    overflow: hidden; /* antes 'auto' para ver lo de la izquierda */     
+    
+    //border: 1px solid black;
+}
+
+.mainTab .slides {
+    display: flex;
+    height: 100%;
+    width: 500%;
+}
+
+.mainTab .slides section {
+    width: 20%;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    transition:  0.2s linear;
+}
+
+.mainTab .slides section .content {
+    display: grid;
+    /* text-transform: uppercase; */
+
+    width: 100%;
+    border: 1px solid black;
+}
+
+.mainTab .slides section .content h2 {
+    font-size: 3rem;
+}
+
+
+input#r1, input#r2 {
+    display: none;
+}
+
+.controls {
+    position: absolute;
+    /* top: 4.6%; */
+    top: 85px; /* lo tuve que cambiar porque el 4.6% no valia */
+    left: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.controls label {
+    /* height: 5.1rem; */
+    
+    width: 10rem;
+    background-color: var(--color);
+    /* color: var(--color); */
+    /* font-size: 2rem; */
+    /* line-height: 5rem; */
+    text-align: center;
+    /* border-top-right-radius: 2rem; */
+    cursor: pointer;
+
+    border-bottom:1px solid black ;
+    padding: 1em;
+}
+
+.controls label:hover {
+    background-color: var(--colorPestaña);
+    color: #000000;
+}
+
+
+
+/* AVISOS FACTURA */
+
+#idContainerAvisosFactura {
+
+    padding: 0.1em;
+    margin: 1em;
+    border: 1px dashed rgb(0, 0, 0);
+    
+    li {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap:0.2em;
+        padding: 0.25em;
+
+        select {
+            padding: 0.5em;
+        }
+    }
+
+    li:nth-child(1) {
+        span:nth-child(3) {
+            margin-right: 22px;
+        }
+    }
+}
+
+/* FACTURA PDF */
+article#idContainerFacturaPDF {
+
+    padding: 0.1em;
+    margin: 1em;
+    //border: 1px solid;
+
+    #facturaPDF {
+        border: 1px dashed grey;
+    }
+
+    .factura__concepto {
+        margin: 1em;
+        //border: 1px dashed grey;
+    }
+}
+
+
+/* MAGIA */
+
+#r1:checked ~ .mainTab .slides > section:nth-child(1) {
+    margin-left: 0%;
+}
+
+#r2:checked ~ .mainTab .slides > section:nth-child(1) {
+    margin-left: -20%;
+}
+
+/* #r3:checked ~ main .slides > section:nth-child(1) {
+    margin-left: -40%;
+} */
+
+
+#r1:checked ~ .controls > label:nth-child(1),
+#r2:checked ~ .controls > label:nth-child(2),
+#r3:checked ~ .controls > label:nth-child(3) {
+    background-color: var(--colorBlanco);
+    color: #000000;
+
+    border: 1px solid black;
+    border-bottom: 1px solid rgb(255, 255, 255) !important;
+}

@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 { /* PRUEBA PARA QUE NO SALTE al poner heigth: 100hv */
+    padding: 1em;
+    margin: 0;
+}
+
+.activo {
+    display: block !important;
+    transform: translateX(0) !important;
+    transition: transform 1s !important;
+}
+
+li {
+    list-style: none; /// quita puntos a las listas
+}
+
+.material-symbols-outlined, select {
+    cursor: pointer;
+}
+
+select {
+    /* for Firefox */ 
+    //-moz-appearance: none; 
+    /* for Safari, Chrome, Opera */ 
+    //-webkit-appearance: none; 
+    background-color: rgb(184, 203, 204);
+    //appearance: none;
+}

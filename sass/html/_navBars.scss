@@ -1,0 +1,97 @@
+nav#idContainer__navBarTop {
+    width: 100%; /// siempre
+    
+    background-color: $paleta_colores_primario_fondo;
+    color: $paleta_colores_primario_texto;
+
+    ul.navbar__top_mobile {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(50px, 1fr));
+        
+        justify-content: space-around;
+        justify-content: space-between;
+        
+        li {
+            
+            color: white;
+            list-style: none; /// quita puntos
+            padding: 1em;
+            align-content: center;
+
+            &:nth-child(1) {
+                display: grid;
+                justify-items: start;
+            }
+            &:nth-child(2) {
+                display: grid;
+                justify-items: center;
+                //place-self: center;
+                line-height: 24px;
+            }
+            &:nth-child(3) {
+                display: grid;
+                justify-items: end;
+                line-height: 24px;
+            }
+        }
+    }
+
+    ul.navbar__top_desktop {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(50px, 1fr));
+
+        text-align: center;
+        align-items: center;
+        //align-content: center; //! servira en la proxima actualizacion
+
+        li {
+            cursor: pointer;
+            color: white;
+            padding: 1em;
+
+            &:hover, &.active {
+                background-color: $color_navegacion_fondo;
+                color: $color_navegacion_texto; //rgb(36, 76, 114);
+            }
+        }
+
+        
+    }
+}
+
+nav#idContainer__navBarBottom {
+    width: 100%;
+
+    background-color: rgb(75, 148, 125);
+    color: white;
+
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(50px, 1fr));
+
+        li {
+
+            color: white;
+            cursor: pointer;
+            list-style: none; /// quita puntos
+            text-align: center;
+            padding: 0.3em;
+
+            display: grid; /// <span> uno arriba y otro abajo
+
+            span {
+                padding: 0.1em;
+            }
+
+            &:hover, &.active {
+                background-color: rgb(36, 76, 114);
+            }   
+        }
+    
+    }
+}

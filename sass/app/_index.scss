@@ -1,0 +1,27 @@
+main.mainIndex {
+    background-color: $paleta_colores_primario_fondo;
+    color: $paleta_colores_primario_texto;
+    
+    height: 100vh;
+    
+    display: grid;
+    place-items: center;
+
+    form {
+        width: 100%;
+        display: grid;
+        place-items: center;
+        gap: 1em;
+        //margin-top: 2em;
+
+        input {
+            padding: 0.5em;
+            width: 70%;
+        }
+
+        .container__btnSubmit {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
