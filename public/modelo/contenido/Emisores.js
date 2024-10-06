@@ -64,7 +64,6 @@ export class Emisores {
 
     /// muestra el LOGO del EMISOR en Modal Left
     logo(photoURL) {
-        console.log('-->', photoURL);
         const container = document.getElementById('idPhotoURL')
         return container.src = "./assets/img/logo/" + photoURL;
     }
@@ -76,7 +75,6 @@ export class Emisores {
                 return `<li><strong>${key}</strong>: ${DECODING(value)}</li>`
             }
         })
-
 
         //const LOGO = `<ul class="container__avatar_modal_left"><li><img src="./assets/img/logo/logo.png" alt=""><h2></h2></li></ul>`
         const ACORDEON = `<details name="acordeon"><summary class='card__modal_left'><ul class="oculto"><li>${DECODING(emisor[0].alias)}</li><li><span class="material-symbols-outlined">edit</span></li></summary><ul>${array_EMISOR.join('')}</ul></details>`;
