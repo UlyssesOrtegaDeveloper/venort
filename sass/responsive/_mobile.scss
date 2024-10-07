@@ -1,5 +1,14 @@
 @media screen and (width >= $width__mobile) {
     
+    body {
+        font-size: 12px;
+    }
+
+    /// tamaño de los iconos
+    .material-symbols-outlined {
+        font-size: 6px;
+    }
+
     nav#idContainer__navBarTop {
         ul {
             margin: 0 auto;
