@@ -664,7 +664,7 @@ export class Facturas {
 
                             if (element2[0] == 'dia') { 
                                 /* .substring(0, 2) */ /// FUNCIONA PERFECTAMENTE, convierte la fecha 01/01/2025 a 01
-                                return `<li>${element2[1]}</li>`
+                                return `<li>${element2[1].substring(0, 2)}</li>`
                             } else {
 
                                 return `<li>${element2[1]}</li>`
