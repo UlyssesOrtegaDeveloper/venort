@@ -39,6 +39,8 @@ body {
     align-items: center;
     justify-content: space-around; */
     transition:  0.2s linear;
+    //! nuevo
+    overflow: scroll;
 }
 
 .mainTab .slides section .content {
