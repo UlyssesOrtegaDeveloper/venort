@@ -7,7 +7,7 @@ ul.card_titulo {
     text-transform: capitalize;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
     justify-items: center;
     align-items: center;
 
@@ -33,7 +33,7 @@ ul.card_titulo {
     
     cursor: pointer;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(50px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(40px, 1fr) );
     align-items: center;
     justify-items: center;
 
@@ -50,6 +50,8 @@ ul.card_titulo {
 
     li:last-child {
         display: none;
+        width: 100%;
+        text-align: center;
     }
 }
 
@@ -57,7 +59,7 @@ ul.card_titulo {
     
     cursor: pointer;
     display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(50px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(40px, 1fr) );
     align-items: center;
     justify-items: center;
 
