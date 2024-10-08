@@ -27,14 +27,11 @@ export class Crud {
 
         const oculto = document.querySelectorAll('ul.oculto > li:last-child')
 
-        const card_titulo = document.querySelectorAll('.card_titulo')
-        let tamaño = card_titulo[1].childNodes.length
+        
 
         oculto.forEach(element => {
             
             try {
-
-                console.log(element);
 
                 if (element.children[0].dataset.name) {
 
@@ -43,6 +40,8 @@ export class Crud {
                     }
 
                     if (element.children[0].dataset.name == 'servicio') {
+                        const card_titulo = document.querySelectorAll('.card_titulo')
+                        let tamaño = card_titulo[1].childNodes.length
                         element.children[0].dataset.p1 = textIcon+'_servicio'
                         card_titulo[1].childNodes[tamaño-1].classList.add('activo')
                         card_titulo[1].childNodes[tamaño-1].innerText = textIcon
