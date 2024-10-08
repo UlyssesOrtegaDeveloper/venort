@@ -27,8 +27,6 @@ export class Crud {
 
         const oculto = document.querySelectorAll('ul.oculto > li:last-child')
 
-        
-
         oculto.forEach(element => {
             
             try {
