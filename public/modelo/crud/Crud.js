@@ -26,10 +26,15 @@ export class Crud {
     mostrar_iconos(textIcon, propiedad, name) {
 
         const oculto = document.querySelectorAll('ul.oculto > li:last-child')
-        
+
+        const card_titulo = document.querySelectorAll('.card_titulo')
+        let tamaño = card_titulo[1].childNodes.length
+
         oculto.forEach(element => {
             
             try {
+
+                console.log(element);
 
                 if (element.children[0].dataset.name) {
 
@@ -39,22 +44,17 @@ export class Crud {
 
                     if (element.children[0].dataset.name == 'servicio') {
                         element.children[0].dataset.p1 = textIcon+'_servicio'
-                    }
-
-                    
+                        card_titulo[1].childNodes[tamaño-1].classList.add('activo')
+                        card_titulo[1].childNodes[tamaño-1].innerText = textIcon
+                    }   
                 }
-
-                /* if (element.children[0].dataset.p1) {
-                    //console.log('->',element.children[0].dataset.p1 = textIcon+'_factura');
-                    element.children[0].dataset.p1 = textIcon+'_factura'
-                } */
-                console.log('-->', element);
 
                 element.lastChild.innerText = textIcon;
                 element.classList.add('activo');
+                
 
             } catch (error) {
-                //console.log(error);
+                console.log(error);
             }
         });
     }
