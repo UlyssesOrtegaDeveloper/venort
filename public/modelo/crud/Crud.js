@@ -32,7 +32,7 @@ export class Crud {
             try {
 
                 if (element.children[0].dataset.name) {
-                    
+
                     if (element.children[0].dataset.name == 'factura') {
                         element.children[0].dataset.p1 = textIcon+'_factura'
                     }
@@ -40,12 +40,15 @@ export class Crud {
                     if (element.children[0].dataset.name == 'servicio') {
                         element.children[0].dataset.p1 = textIcon+'_servicio'
                     }
+
+                    
                 }
 
                 /* if (element.children[0].dataset.p1) {
                     //console.log('->',element.children[0].dataset.p1 = textIcon+'_factura');
                     element.children[0].dataset.p1 = textIcon+'_factura'
                 } */
+                console.log('-->', element);
 
                 element.lastChild.innerText = textIcon;
                 element.classList.add('activo');
