@@ -3,7 +3,7 @@ ul.oculto {
     grid-template-columns: repeat( auto-fit, minmax(40px, 1fr));
     
     li:last-child { /// ocultamos el boton edit y delete
-        display: none;
+        //display: none;
         text-align: end;
     }
 }
