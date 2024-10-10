@@ -516,7 +516,6 @@ export class Facturas {
                     
                     const EXTRAS = element.extras
                     EXTRAS.forEach(element => {
-                        
                         return SERVICIOS_EXTRAS.push(`<li>${element}</li>`)
                     })
                 }
@@ -572,9 +571,9 @@ export class Facturas {
                 element.sort()
                 
                 element.forEach((element2, j) => {
-                    
+                    //console.log('element2',element2, 'j:', j);
                     if (element2[0] != 'dia') {
-
+                        console.log(element2[0], OPERACIONES_FACTURA[j-1][0]);
                         if (element2[0] == OPERACIONES_FACTURA[j-1][0]) {
                             OPERACIONES_FACTURA[j-1][1] = (Number(element2[1]) + OPERACIONES_FACTURA[j-1][1])
                         }
@@ -596,6 +595,7 @@ export class Facturas {
             
             /// multiplicamos servicio * precio
             OPERACIONES_FACTURA.forEach((element, i) => {
+                
                 let multi = (element[1] * element[2])
                 element.push(multi)
             });
@@ -604,7 +604,6 @@ export class Facturas {
             /// FILTRAMOS para eliminar 'extras_concepto'
             const OPERACIONES_FACTURA_FILTRADA = OPERACIONES_FACTURA.filter(element => element[0] != 'extras_concepto');
             
-
             let suma = 0
 
             /// para una mejor vista en la Factura pdf ordenamos las operaciones
@@ -677,12 +676,10 @@ export class Facturas {
                 }
             })
 
-            
             /// añadimos etiqueta <li> al final, que quedará oculto, para usarlo en EDIT y DELETE
             prueba2.forEach((element,i) => element.push(`<li data-posicion='${i}'><span data-name='servicio' class="material-symbols-outlined" data-evento="click" data-clase="dialog" data-metodo="abrir_modal" data-propiedad="auto" data-p1='delete_factura' data-p2='${i}' data-p3='${parametros[2]}' data-p4='${element[0].substring(4, 12)}'>edit</span></li>`));
             
             prueba2.sort()
-            
             
             /// añadimos etiqueta <ul> por cada servicio, y aparte un 'join' para quitar comas
             let prueba3 = prueba2.map((element, i) => `<ul class='card oculto'>${element.join('')}</ul>`);
